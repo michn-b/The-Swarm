@@ -58,7 +58,7 @@ for i in range(it):
     if bird_of_prey:
         plt.quiver(x_Bp, y_Bp, u, v, c)
     
-    plt.savefig(f"birds_pic\\{i}")
+    #plt.savefig(f"birds_pic\\{i}")
     
     plt.show()
     plt.clf()
@@ -87,8 +87,6 @@ for i in range(it):
         nearest_bird=birds_tree.query(bop_position, 1)[1]
         
         list_of_nearest_birds=birds_tree.query_ball_point(bop_position, r_b)
-        
-        print(list_of_nearest_birds)
         
         for i in range(len(list_of_nearest_birds)):
             
@@ -170,18 +168,18 @@ for i in range(it):
         bop_position=[x_Bp,y_Bp]
 
 # Create the frames
-frames = []
-imgs = []
-for i in range(it):
-    imgs.append(f"birds_pic\\{i}.png")
-for i in imgs:
-    new_frame = Image.open(i)
-    frames.append(new_frame)
+#frames = []
+#imgs = []
+#for i in range(it):
+ #   imgs.append(f"birds_pic\\{i}.png")
+#for i in imgs:
+ #   new_frame = Image.open(i)
+  #  frames.append(new_frame)
 # Save into a GIF file that loops forever
-frames[0].save('mojgif_0.0001.gif', format='GIF',
-               append_images=frames[1:],
-               save_all=True,
-               duration=150, loop=0)
+#frames[0].save('mojgif_0.0001.gif', format='GIF',
+ #              append_images=frames[1:],
+  #             save_all=True,
+   #            duration=150, loop=0)
    
 
 

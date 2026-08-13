@@ -1,11 +1,13 @@
 import parameters
 from swarm import Swarm
-import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
 swarm = Swarm()
 
-dx, dy = swarm.get_direction()
+dx, dy = swarm.get_directions()
 
-plt.quiver(swarm.position[:, 0], swarm.position[:, 1], dx, dy , swarm.theta, cmap="turbo")
+plt.quiver(swarm.positions[:, 0], swarm.positions[:, 1], dx, dy , swarm.angles, cmap="turbo")
+
+
 plt.show()
