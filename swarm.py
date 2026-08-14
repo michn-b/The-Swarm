@@ -16,7 +16,7 @@ class Swarm:
         dy = np. sin(self.angles)
         return dx, dy
 
-    def update(self, dt):
+    def update(self):
         swarm_tree = cKDTree(self.positions, boxsize=[parameters.L, parameters.L])
         distances = swarm_tree.sparse_distance_matrix(swarm_tree, 
                                                 max_distance = parameters.r, 
@@ -30,7 +30,6 @@ class Swarm:
         random_angles = (np.random.rand(parameters.N)-0.5) * 2 * np.pi
         self.angles = (np.angle(sum_exp) + parameters.a * random_angles)
 
-        self.positions[:, 1] = self.positions[:, 1] + parameters.v_0*np.sin(self.angles) * dt
-        self.positions[:, 1] = self.positions[:, 1] + parameters.v_0*np.sin(swarm.angles) * dt
+        self.positions[:, 0] = self.positions[:, 0] + parameters.v_0*np.cos(self.angles) * parameters.dt
+        self.positions[:, 1] = self.positions[:, 1] + parameters.v_0*np.sin(self.angles) * parameters.dt
         self.positions = self.positions % parameters.L
-

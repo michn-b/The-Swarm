@@ -167,19 +167,19 @@ for i in range(it):
         c=direction_Bp
         bop_position=[x_Bp,y_Bp]
 
-# Create the frames
-#frames = []
-#imgs = []
-#for i in range(it):
- #   imgs.append(f"birds_pic\\{i}.png")
-#for i in imgs:
- #   new_frame = Image.open(i)
-  #  frames.append(new_frame)
+#Create the frames
+frames = []
+imgs = []
+for i in range(it):
+    imgs.append(f"birds_pic\\{i}.png")
+for i in imgs:
+    new_frame = Image.open(i)
+    frames.append(new_frame)
 # Save into a GIF file that loops forever
-#frames[0].save('mojgif_0.0001.gif', format='GIF',
- #              append_images=frames[1:],
-  #             save_all=True,
-   #            duration=150, loop=0)
+frames[0].save('mojgif_0.0001.gif', format='GIF',
+               append_images=frames[1:],
+               save_all=True,
+               duration=150, loop=0)
    
 
 
