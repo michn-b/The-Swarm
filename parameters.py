@@ -9,8 +9,11 @@ N = 10000
 # birds velocity
 v_0 = 2
 
-# noise amplitude
+# swarm noise amplitude
 a = 0.15
+
+# predator noise amplitude
+a_p = a * 0.0001
 
 # radius used to find neighboring birds
 r = 1 
